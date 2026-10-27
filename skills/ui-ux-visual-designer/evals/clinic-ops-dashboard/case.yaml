@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: clinic-ops-dashboard
+expected_outcome: |
+  A single-file HTML operational dashboard that answers the managers' daily questions with KPI tiles that state periods and comparisons, a needs-attention list, a properly aligned table (right-aligned tabular numbers, BDT formatting), status shown with text not colour alone, Bangla names handled, works at phone width, includes or describes empty/error states, and was rendered and reviewed before delivery.

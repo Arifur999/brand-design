@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: hvac-homepage
+expected_outcome: |
+  A self-contained HTML homepage for a local HVAC business that leads with booking/calling on mobile, uses only the real facts given (no invented testimonials or stats), shows trust signals near the CTA, works at 375 px and desktop, and was rendered and reviewed before delivery with a short summary of direction and checks.

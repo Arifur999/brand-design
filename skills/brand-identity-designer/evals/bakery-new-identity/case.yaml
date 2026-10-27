@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: bakery-new-identity
+expected_outcome: |
+  2 to 3 distinct identity routes (each with a one-sentence mechanism, a logo as clean SVG checked at small sizes, a palette with measured contrast and roles, typefaces with licences and Bangla coverage), differentiated from the named competitors and free of unjustified bakery clichés and model defaults, presented on a board with a recommended route, then stopping for the client's choice.
