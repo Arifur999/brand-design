@@ -50,7 +50,7 @@ Category codes are trust signals: keep them in the proof layer, break them in th
 - **Events and weddings:** excitement, romance · real event photos, priced packages · blush + sage or black + a hot colour · a dynamic identity or strong wordmark with variable colour.
 - **Media and publishing:** curiosity and trust · bylines, dates, corrections policy · newsprint + one red.
 - **Faith and community:** welcome · times and address up front, named leaders, safeguarding policy.
-- **Personal brands:** the person is the product; the photography direction is the highest-leverage asset (first impressions of a face form in about 100 ms, Todorov & Willis 2006); a wordmark or monogram plus a strict template system; one avatar everywhere.
+- **Personal brands** (full playbook in `presentation.md`): the person is the product; the photography direction is the highest-leverage asset (first impressions of a face form in about 100 ms, Todorov & Willis 2006); a wordmark or monogram plus a strict template system; one avatar everywhere.
 
 ## Global tropes to avoid by default
 Blue-to-purple "AI" gradients · dark + gold as automatic premium · stock handshake and laptop-pointing photos · grey text on colour failing contrast · an accent-coloured "magic word" in the headline · a row of unverified big numbers · hero photos washed out under heavy overlays · style words leaking into visible copy.

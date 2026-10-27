@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: guidelines-delivery
+expected_outcome: |
+  Lean guidelines built in the brand's own system (logo versions, clear space and minimum sizes from the mark's unit, misuses specific to this mark, colour table with tested pairs and honest print notes, type with licences and Bangla, a quick-reference page), plus a real file package: lint-checked SVGs, transparent PNGs, a vector PDF, favicon and app icons with manifest, tokens, a README, and a list of what still needs a human or vendor (CMYK proofs, vinyl codes, native reader check).
+context:
+  scaffold_script: place-files.sh

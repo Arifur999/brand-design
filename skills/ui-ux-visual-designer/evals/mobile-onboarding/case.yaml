@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: mobile-onboarding
+expected_outcome: |
+  Single HTML file with 4 to 5 iPhone-size onboarding screens (about 390 to 402 px wide) following current iOS conventions, a language choice with correct Bangla rendering, first habit created before any account, a pre-permission explanation before the system notification prompt with a path that still works if refused, 44 pt targets, states covered, rendered and reviewed with a score before delivery.

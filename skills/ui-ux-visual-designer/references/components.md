@@ -8,7 +8,7 @@ Only the specs that are easy to get wrong. Read when designing or reviewing comp
 - States change colour roles only (primary → primary-hover); never invent new colours for states.
 - Focus: `outline: 2px solid var(--focus-ring); outline-offset: 2px` (offset −2 px inside clipping containers such as scrolling tab lists and tables).
 - Radius by hierarchy: controls 8, cards 12, modals and panels 16, pills, badges, avatars and switches full; inner radius = outer minus padding.
-- Weights: 400 body, 500 labels and buttons, 600 titles; 3 weights at most. Labels in sentence case without trailing colons; no all-caps labels or badges.
+- Weights: 400 body, 500 labels and buttons, 600 titles; 3 weights at most. Labels, buttons and badges in sentence case without trailing colons. All caps only for a short overline that adds information (at most one per section, tracked +0.05 to 0.08em), never on every heading.
 - Spacing: label to control 8, related buttons 12, field to field 24, groups 40+.
 - Avoid disabled controls. Prefer leaving them enabled and explaining on submit, or `aria-disabled="true"` (stays focusable, can show a reason) with the reason nearby. Native `disabled` gets no hover or focus and cannot explain itself.
 

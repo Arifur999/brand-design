@@ -1,0 +1,172 @@
+{
+  "route": "A: Shelf",
+  "status": "DRAFT directions for client choice. Screen values are exact; CMYK/Pantone not supplied (to be proofed by the printer and a physical swatch book).",
+  "colours": {
+    "ink": {
+      "hex": "#1E2A4A",
+      "oklch": "oklch(0.292 0.061 267.1)",
+      "role": "Signature. Sign ground, text on light, mark on light."
+    },
+    "glow": {
+      "hex": "#F7A58C",
+      "oklch": "oklch(0.796 0.104 37.7)",
+      "role": "Accent on dark only (lit lettering, shelf line, links on dark). Never on light grounds."
+    },
+    "flour": {
+      "hex": "#F6F1E8",
+      "oklch": "oklch(0.960 0.013 82.4)",
+      "role": "Light ground and text on dark."
+    },
+    "ember": {
+      "hex": "#B4472B",
+      "oklch": "oklch(0.540 0.148 35.4)",
+      "role": "Accent on light grounds (shelf line, small highlights). Darker twin of glow."
+    },
+    "crumb": {
+      "hex": "#E6DDCC",
+      "oklch": "oklch(0.900 0.025 83.4)",
+      "role": "Surface on light (cards, bag liners, menu panels)."
+    },
+    "deep": {
+      "hex": "#141C33",
+      "oklch": "oklch(0.232 0.046 268.2)",
+      "role": "Dark-mode ground and Instagram story ground."
+    }
+  },
+  "roles": {
+    "light": {
+      "bg": "flour",
+      "surface": "crumb",
+      "text": "ink",
+      "accent": "ember",
+      "mark": "ink"
+    },
+    "dark": {
+      "bg": "deep",
+      "surface": "ink",
+      "text": "flour",
+      "accent": "glow",
+      "mark": "flour"
+    }
+  },
+  "contrast_measured_wcag": [
+    {
+      "fg": "ink",
+      "bg": "flour",
+      "use": "text",
+      "ratio": 12.57,
+      "result": "PASS"
+    },
+    {
+      "fg": "flour",
+      "bg": "ink",
+      "use": "text",
+      "ratio": 12.57,
+      "result": "PASS"
+    },
+    {
+      "fg": "glow",
+      "bg": "ink",
+      "use": "text",
+      "ratio": 7.21,
+      "result": "PASS"
+    },
+    {
+      "fg": "ember",
+      "bg": "flour",
+      "use": "text",
+      "ratio": 4.81,
+      "result": "PASS"
+    },
+    {
+      "fg": "ink",
+      "bg": "crumb",
+      "use": "text",
+      "ratio": 10.49,
+      "result": "PASS"
+    },
+    {
+      "fg": "flour",
+      "bg": "deep",
+      "use": "text",
+      "ratio": 15.01,
+      "result": "PASS"
+    },
+    {
+      "fg": "glow",
+      "bg": "deep",
+      "use": "text",
+      "ratio": 8.62,
+      "result": "PASS"
+    },
+    {
+      "fg": "ember",
+      "bg": "flour",
+      "use": "ui",
+      "ratio": 4.81,
+      "result": "PASS"
+    },
+    {
+      "fg": "glow",
+      "bg": "ink",
+      "use": "ui",
+      "ratio": 7.21,
+      "result": "PASS"
+    }
+  ],
+  "forbidden_pairs": [
+    "glow on flour",
+    "ember on crumb"
+  ],
+  "competitor_distance": {
+    "note": "Competitor colours are ASSUMED from memory of their signs and branding (Raja Sweets red+gold, Merit Kabab Palace deep red, Tous Les Jours green). Not verified: confirm from photos before final.",
+    "assumed": [
+      "#C8102E",
+      "#F2B705",
+      "#B01E23",
+      "#00843D"
+    ],
+    "results": {
+      "primary": {
+        "ink": [
+          {
+            "competitor": "#C8102E",
+            "dE2000": 40.7
+          },
+          {
+            "competitor": "#F2B705",
+            "dE2000": 74.9
+          },
+          {
+            "competitor": "#B01E23",
+            "dE2000": 38.6
+          },
+          {
+            "competitor": "#00843D",
+            "dE2000": 45.7
+          }
+        ]
+      },
+      "accent": {
+        "glow": [
+          {
+            "competitor": "#C8102E",
+            "dE2000": 32.1
+          },
+          {
+            "competitor": "#F2B705",
+            "dE2000": 27.6
+          },
+          {
+            "competitor": "#B01E23",
+            "dE2000": 35.5
+          },
+          {
+            "competitor": "#00843D",
+            "dE2000": 55.3
+          }
+        ]
+      }
+    }
+  }
+}

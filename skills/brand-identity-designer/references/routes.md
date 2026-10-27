@@ -38,7 +38,7 @@ Measured in a public experiment (30 briefs, 180 answers across Claude models, Oc
 3. Cream ground + terracotta + gold or brass accent (+ serif display): the strongest cluster.
 4. Navy + gold for law, property, finance, insurance, public sector.
 5. Sector fonts: Cormorant Garamond (wine, hotel, property), Canela (law), Barlow Condensed (construction, logistics), Space Grotesk or Sora (AI, crypto, fintech), Poppins (edtech).
-6. Indigo or violet for anything technology; blue-to-purple gradients.
+6. Indigo or violet in technology briefs (rare elsewhere, about 6% of primaries); blue-to-purple gradients are rare (about 5%) but read as a cliché when they appear.
 7. Logo formula: the name's object + hidden letter + negative space + circle + a local "nod"; symbol + wordmark nearly always.
 
 ## Category clichés in human-made logos

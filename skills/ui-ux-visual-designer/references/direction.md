@@ -21,13 +21,17 @@ Models sample the most common patterns, so without direction they produce the st
 8. **Details:** written micro-copy on empty states, errors and success; real favicon and social image; a 404 in the brand voice. Custom cursors only where the cursor is the concept, never on lead-gen or e-commerce.
 9. **Rework component-library defaults:** retheme every token (background, foreground, primary, radius, ring, border) before using a component; build heroes, cards and section shells yourself; keep the library for behaviour-heavy primitives (dialog, menu, tabs, inputs).
 
+## Effects budget
+One or two effect types per page (grain, gradient, glass, glow, texture, shadow drama), at most one per viewport, none on forms, checkout or dashboards. Removal test: delete the effect; if nothing is lost, leave it out.
+
 ## The generic check (run before presenting)
 1. "Would I have produced this plan for any similar brief?" If yes, change the generic part and say what you changed.
 2. **Logo swap test:** put a competitor's logo on the page. If every claim and visual still fits, the page is not specific enough.
 3. Count the tells present; each one stays only with a written reason.
 4. Name the signature element and the job it does.
 
-## Direction recipes (starting points; change at least two things per client)
+## Direction recipes (starting points, never the answer)
+Take the palette hue from something real the client owns (van wrap, signage, packaging, storefront) and check each recipe font against the type of 3 named competitors: if a competitor already uses it, swap it. A recipe used unchanged is a template.
 Fonts: (G) Google Fonts, (F) Fontshare (check the per-family licence).
 
 | Recipe | Fits | Type | Palette | Shape and depth | Imagery and motion | Signature idea |

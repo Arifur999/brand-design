@@ -46,19 +46,17 @@ Survivors get the **primary touchpoint test**: mock the mark on the brand's main
 | Mark vanishes on dark or brand ground | a reversed version, or a tile, decided per ground |
 
 ## Wordmarks and lockups `[practice]`
-- Wordmark from the route's display face, tracked and kerned by eye at large size, plus at most one ownable detail (a cut terminal, a shared stroke, the symbol's angle or radius in one letter). Custom letters only for short names.
+- Wordmark from the route's display face, tracked and kerned by eye at large size, plus at most one ownable detail (a cut terminal, a shared stroke, the symbol's angle or radius in one letter) made with `scripts/brand_kit.py boolean` on the outlined letters. Custom letters only for short names. **Customise only OFL fonts** (Google Fonts): the ITF Fontshare licence forbids modifying the font, so Fontshare faces may be used for wordmarks only as set, never cut or redrawn.
 - Symbol corners, cut angles and weight follow the type's contrast and terminals; a round symbol with a hard grotesk only as deliberate contrast.
 - Lockups: horizontal and stacked; unit = cap height; symbol aligned optically to the cap-height band (round forms overshoot slightly).
 - Clear space from the mark's own unit (e.g. the height of the "x" or the symbol's stem). Minimum size just above where the defining feature disappears, in px and mm.
 - Note 1 to 2 misuses only this mark can suffer (filled-in stencil gap, symbol moved off its axis) plus the general ones (stretching, recolouring, effects, busy grounds).
 - Parts that sit side by side differ in lightness, not only hue.
-- OFL fonts may be outlined into a logo with no attribution; ITF Fontshare licence also allows logos; other licences need written logo permission.
-
-## Optical corrections (system stage) `[practice]`
-Overshoot round and pointed parts past the flat lines (use the display font's O to H ratio); horizontals slightly thinner than verticals; content in a tile sits slightly above centre; reversed (light on dark) marks look heavier, so thin them slightly or use a lighter cut; judge at 32 px.
+- OFL fonts may be outlined and modified into a logo with no attribution; ITF Fontshare faces may be used unmodified in a logo; commercial licences need written permission for logo use and modified letterforms.
+- Build in black and white first and judge the silhouette before any colour; colour comes last.
 
 ## Craft rules that are easy to miss
-- Overshoot round and pointed forms 1 to 3% past the baseline and cap height; optical centre sits slightly above the geometric centre; horizontals slightly thinner than verticals; thin strokes at junctions (ink traps help heavy marks survive small sizes and print).
+- Optical corrections at the system stage: overshoot round and pointed forms 1 to 3% past the baseline and cap height (match the display font's O to H ratio); reversed marks (light on dark) look heavier, so thin them slightly, judged at 32 px; optical centre sits slightly above the geometric centre; horizontals slightly thinner than verticals; thin strokes at junctions (ink traps help heavy marks survive small sizes and print).
 - Kern for equal-looking areas, not distances; check AV, AW, LT, LY, Ty, Te, To, Va, rn (reads as m), cl (reads as d), and capital-to-lowercase pairs; flip upside down or blur to judge shapes. All-caps wordmarks need positive tracking.
 - Counters open enough for small sizes and ink spread on uncoated paper and fabric; hairlines vanish in embroidery and vinyl, so set a minimum stroke.
 - Remove one element at a time: if the mark does not get worse, leave it out. Simple is not generic: distinctiveness is one unexpected decision. Silhouette test: filled solid black, is it still this brand?
@@ -70,3 +68,11 @@ Favicon at 16 and 32 px on light and dark tabs · circular avatar at 40 and 110 
 
 ## Checks
 Gates: SVG rules above; 16 and 32 px renders inspected; one-colour version works; the mark reaches 3:1 against every ground it is shown on, or sits on a declared tile (WCAG 1.4.11 as practice; logos are formally exempt); the thinnest feature survives the minimum size; type licence covers logo use. Warnings (judgement): more than 3 colours, near-equal radii or angles, detail growth without a named defect, a cliché from `routes.md` without a written reason.
+
+## Bilingual and multi-script lockups `[practice]`
+- Decide which script leads from the audience and the sign's main reader; the other script is set to match, not shrunk into a tagline.
+- Match optical size, not point size: Bangla, Devanagari and Arabic need a larger size than Latin to look equal (compare the Latin x-height with the Bangla body under the headline); match stroke weight by eye at the real viewing distance.
+- Align on a shared baseline or a shared headline (Bangla hangs from the matra line); never let one script float between the other's lines.
+- Prefer families designed together or with matching skeletons (Anek, Noto, Hind with a humanist sans); outline both with `outline_text.py` so shaping is correct.
+- Right-to-left scripts mirror lockup order and arrows; numerals follow the market's convention.
+- A native reader checks spelling, word breaks and connotations before anything is painted or printed.

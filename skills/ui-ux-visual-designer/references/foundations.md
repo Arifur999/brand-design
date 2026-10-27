@@ -48,10 +48,10 @@ The numbers and rules behind every interface. Defaults, not laws: break one when
 - One base radius, derived sizes. Nested radius = outer radius minus the padding between. Radius is personality: 0 to 4 precise or serious, 6 to 12 friendly or modern, pill for playful or for tags and buttons only. Hierarchy decides radius (full-bleed sections square, buttons softer), not "everything rounded-2xl".
 
 ## Gestalt and grouping
-Proximity fixes most clutter without boxes. Similar things look and behave the same. Use common region (backgrounds, borders) sparingly. Align baselines in rows of cards. Overlays need a scrim (black 40 to 60%).
+Proximity fixes most clutter without boxes. Similar things look and behave the same. Use common region (backgrounds, borders) sparingly. Align baselines in rows of cards. Modal overlays need a scrim (black 40 to 60%) so the dialog reads as the figure; text over photos needs about 60% (see `imagery.md`).
 
 ## Imagery and icons
-- One photo treatment (grade, crop ratios from a short list: 16:9, 4:3, 1:1, 3:4). Real photos of the actual business beat stock. Always reserve the image's aspect ratio to avoid layout shift. Text over images needs a scrim to keep 4.5:1.
+- One photo treatment (grade, crop ratios from a short list: 16:9, 4:3, 1:1, 3:4). Real photos of the actual business beat stock. Always reserve the image's aspect ratio to avoid layout shift. Text over images needs a scrim of about 60% (or a solid panel) to keep 4.5:1 at the brightest pixel; text-shadow is not a fix. Details in `imagery.md`.
 - One icon set, one stroke weight, sizes per context (16 inline, 20 in controls, 24 standalone), optically centred with text. Illustrations in one style drawn from the brand tokens, only when they have a job.
 
 ## Interaction states
@@ -64,5 +64,22 @@ Every interactive element: default, hover (pointer only), focus-visible (2 px ri
 - Animate `transform` and `opacity` only. Never animate keyboard-driven or high-frequency actions. Respect `prefers-reduced-motion` (replace movement with a fade or nothing). Nothing flashes more than 3 times per second.
 - Intensity levels: 0 none, 1 state feedback only (default for apps), 2 plus subtle reveals, 3 one orchestrated sequence (marketing), 4 scroll storytelling (portfolios, launches). Choose the level in the direction and keep it.
 
+**Motion by site type** (levels on the 0 to 4 scale above; animation JS before LCP, gzip; checked Oct 2026, verify):
+
+| Site type | Level | JS before LCP | Use | Avoid |
+|---|---|---|---|---|
+| Local service | 1-2 | 0-5 KB | CTA press feedback, one-time fades below the fold, pausable review carousel | Hero or phone-number entrances, preloaders, parallax, autoplay sliders |
+| SaaS marketing | 2-3 (dev tools 3-4) | 20-40 KB | Animated product UI, gliding tab indicator, one hero sequence | Fade-up on every element, a hero that delays the CTA |
+| Agency, studio | 4 | 60-120 KB | Page transitions, split text, pinned case studies | Preloader over 2 s, scroll-jacking, no mobile fallback |
+| Portfolio | 2-4 | 5-40 KB | Project hover preview, list-to-case-study morph | Making a recruiter wait, animated skill bars |
+| Luxury, fashion | 3-4, slow | 20-60 KB | 800 to 1200 ms image reveals, crossfades, muted video | Bounce, confetti, fast staggers |
+| E-commerce | 2 | 5-25 KB | Add-to-cart feedback, gallery swipe, skeletons | Staggered 48-card reveals, anything that delays checkout |
+| Restaurant, hospitality | 2-3 | 0-20 KB | Muted hero video with pause, menu tab crossfade | Autoplay sound, hours or booking hidden behind motion |
+| Healthcare, clinic | 1-2 | 0-5 KB | Gentle fades, calm step transitions | Parallax, zoom, flashing, bounce (vestibular risk) |
+| Fintech | 2-3 | 10-40 KB | Precise number transitions, charts drawing once | Bounce on money actions, ambiguous mid-flight numbers |
+| Dashboard, docs | 1 | 0-20 KB | Dialogs at 150 to 200 ms, skeletons, layout animation on reorder | Page transitions, staggered loads, animated keyboard actions |
+| Event, launch | 4 | 60-150 KB | 3D hero, kinetic type, countdown | Date and register CTA behind a sequence, no lite mode |
+| Nonprofit | 2-3 | 5-30 KB | Story scroll, impact counters | Slowing the donation form |
+
 ## Quick defaults (when nothing else is decided)
-Container 1280 with 16/24/32 side padding · body 16 to 18 at 1.5 · headings 1.1 to 1.2 slightly tightened · scale 1.25 · section padding 64 / 96 · card padding 24 · gap 24 to 32 · neutral ramp tinted to the brand hue · one accent · radius 8 to 10 with nested rule · focus ring 2 px + 2 px offset · targets 44 px for primary touch actions, 24 px absolute minimum · motion 150 / 220 / 320 ms, ease-out.
+Container 1280 with 16/24/32 side padding · body 16 to 18 at 1.5 · headings 1.1 to 1.2 slightly tightened · scale 1.25 · section padding 64 / 96 · card padding 24 · gap 24 to 32 · neutral ramp tinted to the brand hue · one accent · base radius token 8 (controls 8, cards 12, dialogs 16, see `components.md`) with the nested rule · focus ring 2 px + 2 px offset · targets 44 px for primary touch actions, 24 px absolute minimum · motion 150 / 220 / 320 ms, ease-out.

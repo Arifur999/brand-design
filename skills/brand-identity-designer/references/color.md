@@ -26,7 +26,7 @@ Tags: `[strong]` `[limited]` `[practice]` `[popular-unsupported]`. Arithmetic: `
 - Avoid isoluminant pairs (both saturated, lightness difference small: they shimmer) and red-green as the only signal. Fix with lightness, not hue. `color_tools.py cvd` on every pair that must be told apart.
 
 ## Contrast rules for brand use
-Text 4.5:1, large text 3:1, UI parts and the logo against its ground 3:1. Light or thin type (300 and below, hairline serifs) needs 4.5:1 even when large. Write the passing pairs into the guidelines with their ratios; list forbidden pairs too.
+Text 4.5:1, large text 3:1, UI parts and the logo against its ground 3:1. Parts of a logo that must be told apart differ in lightness by at least 15 to 20 L* (this also protects one-colour and grayscale reproduction). Avoid pure #000 with pure #FFF for long text in dark mode (halation). Links that are not underlined need 3:1 against the surrounding body text as well as 4.5:1 against the ground. Light or thin type (300 and below, hairline serifs) needs 4.5:1 even when large. Write the passing pairs into the guidelines with their ratios; list forbidden pairs too.
 
 ## Print and production honesty
 - Screen values are exact (HEX, RGB, OKLCH). CMYK and Pantone values derived on screen are **indicative**: a printer's ICC profile and a physical swatch book decide them. Label them "to be proofed" until they are.

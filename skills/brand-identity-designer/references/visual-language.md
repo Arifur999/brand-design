@@ -5,7 +5,7 @@ The mark is a small part of how a brand is recognised. Devices, imagery, type be
 ## Graphic devices
 - The most underused and often the most recognisable part of a small brand's identity. Derive 1 to 2 devices from the mark (a crop of the symbol, a letter's angle, a counter shape) or from the business (a road line for a courier, pool-tile grid for a pool builder, stitch line for a tailor). One generative shape can make patterns, dividers and containers.
 - Each device needs rules: scale, crop ("may bleed off any edge, never cropped below half its width"), colours, placement, and never behind body text or across faces.
-- Must work without the logo. **Logo-off test:** cover the logo on 5 assets; if you cannot tell they belong together, the constants are too weak. **Family test:** 10 assets side by side should look like siblings, not twins or strangers.
+- Device library rules: patterns repeat at a fixed pitch (offset equals pitch so tiles join), fade or crop at edges deliberately, and each device appears in at least three places or it is decoration. Must work without the logo. **Logo-off test:** cover the logo on 5 assets; if you cannot tell they belong together, the constants are too weak. **Family test:** 10 assets side by side should look like siblings, not twins or strangers.
 
 ## Constants and variables
 Write per element what never changes and what may: logo drawing constant, lockup variable · core hue and action role constant, secondary lead per campaign variable · type families and hierarchy constant, sizes within the scale variable · device geometry constant, crop and colour variable · imagery light, grade and honesty constant, subjects variable · voice traits constant, tone variable · grid, margins and logo position constant, composition variable.
@@ -35,7 +35,8 @@ One set, never mixed; stroke matches the adjacent text weight; corner style matc
 - Headline tests: swap (replace the brand with a competitor: still works means not specific), so-what, proof on the same page, read aloud. Retire "Welcome to X", "your trusted partner", "[category] reimagined", "quality you can trust", "one-stop shop".
 - Message hierarchy: one-sentence value proposition, three supporting pillars that are actually different from each other, each with proof, then objection answers in the customer's words, then 50 and 100 word boilerplates. Never invent numbers; use proof that needs none (a guarantee, a process, a named credential).
 
-## Presenting routes and territories
-- A moodboard territory: 2 to 3 word name, traits, 9 to 15 images showing mood, light, materials and type, never other companies' logos (that invites "make it like that one").
-- Each route: name, one-sentence idea, rationale tied to the platform, mark, palette, type, one device, 4 to 6 real touchpoints at the same finish, the mark small (favicon, avatar, app icon) and one hard case (busy photo, embroidered cap, one colour on an invoice). Use the client's actual world: their van model, storefront, uniforms, real headlines and phone number.
-- Feedback: ask "which route best expresses [trait]?", ask for problems not solutions; "I don't like the colour" can mean a personal association, a competitor resemblance or an audience mismatch, which need three different responses. Two refinement rounds per phase; a third signals an unclear brief. Classify feedback as fix, change (preference within scope) or new scope.
+Presenting routes, territories and feedback: `presentation.md`.
+
+## Mascots, characters and partner badges
+- A mascot needs a character sheet (poses, expressions, front, side and back views, colour, don'ts) and a head-only small version; never based on an existing character.
+- Partner, payment, certification and award badges come only from the owner's official files with permission; until then use a labelled placeholder. Never redraw or recolour them.

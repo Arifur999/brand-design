@@ -55,3 +55,23 @@ Motion: level <0 to 4>, the one orchestrated moment
 Signature element: <what it is and the job it does>
 Generic check: what I changed because it was generic
 ```
+
+## Feedback and change control
+- Classify every piece of feedback: **fix** (it is wrong against the brief: do it), **change** (a preference within scope: do it within the agreed rounds), **new scope** (a new page, feature or direction: say so and estimate before doing it).
+- Ask for problems, not solutions ("what feels wrong for your customers?"), and tie questions to the brief's adjectives. "I don't like the colour" can mean a personal association, a competitor resemblance or an audience mismatch: find out which before changing anything.
+- Two revision rounds per phase is normal; a third usually means the brief was unclear: go back to it.
+- Approve structure before visuals and the key screen before the rest; feedback on colour while structure is open wastes rounds.
+
+## Common failure modes and their corrections
+| Failure | Correction |
+|---|---|
+| Generic SaaS look | derive the direction from the client's real materials; one signature element |
+| Invented proof | design the slot, label `[needs: ...]` |
+| Everything centred | left-align section headers and body; centre only a short closing CTA |
+| Five weights, three accents | 2 to 3 weights, one accent |
+| Grey text on colour | tint toward the background hue or use the on-colour token |
+| 100vh hero hiding the CTA | height from content; CTA in the first mobile viewport |
+| Desktop-only design | design 375 first for the key screen |
+| Only the happy state | design empty, loading, error and permission states |
+| Redrawn or recoloured client logo | use the client's files untouched |
+| Drift from the system on later pages | add the new style to the system or remove it |

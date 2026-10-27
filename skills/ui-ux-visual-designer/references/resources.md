@@ -49,7 +49,7 @@ Type defaults that read as AI-made when chosen without a reason: Inter, Roboto, 
 | Lucide (lucide.dev) | ISC (Feather parts MIT); no on-screen credit, keep the notice in source | Default for shadcn; 2 px round strokes, so it is also the most recognisable "default" look | Core |
 | Phosphor (phosphoricons.com) | MIT | Six weights including duotone and fill: easy to give a product its own icon voice | Core |
 | Tabler Icons (tabler.io/icons) | MIT | 6,000+ consistent 24 px / 2 px stroke icons | Core |
-| Hugeicons, Remix Icon, Heroicons | Free tiers MIT; Remix changed to its own licence in Jan 2026; Heroicons small and slow-moving | Read the licence before use | Situational |
+| Hugeicons, Remix Icon, Heroicons | Free tiers MIT; Remix Icon reportedly moved to its own licence in 2026 (verify); Heroicons small and slow-moving | Read the licence before use | Situational |
 | Flaticon | Free icons require visible attribution, **may not be used in logos or trademarks**, licence per icon; mixed authors | Blocks agents; inconsistent styles across authors | Avoid by default |
 | Icons8 | Free use requires a link back; paid removes it; sells AI-generated imagery alongside | Blocks agents; mixed provenance | Avoid by default |
 | SF Symbols / Material Symbols | SF Symbols only inside apps on Apple platforms, never on websites or in logos | Use in native apps only | Situational |
@@ -62,7 +62,7 @@ oklch.com (picker and gamut, open source) · Radix Colors (accessible step scale
 
 ## Photos and illustration
 
-Client's own photography first: real team, real jobs, real product. Unsplash and Pexels licences allow commercial use without credit but not selling unaltered copies; identifiable people must not be shown in a bad light; stock people lower trust for local businesses. unDraw, Open Peeps and Humaaans for illustration (CC0 or free commercial). Never present AI-generated images as photographs of a real business, its people or its work.
+Client's own photography first: real team, real jobs, real product. Unsplash and Pexels licences allow commercial use without credit but not selling unaltered copies; identifiable people must not be shown in a bad light; stock people lower trust for local businesses. Illustration: unDraw (free, recolourable) is fine for empty states but is everywhere, so never a signature; Open Peeps and Humaaans look dated (frozen around 2020); Storyset's free tier requires a credit. A signature illustration style means commissioning one illustrator. Never present AI-generated images as photographs of a real business, its people or its work. Full rules: `imagery.md`.
 
 ## Standards (primary sources)
 

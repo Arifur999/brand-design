@@ -13,13 +13,12 @@ Evaluated 2026-10-27 (live fetch unless noted). Reference sites show other peopl
 | Branding Style Guides (brandingstyleguides.com) | Real brand guideline documents: structure and depth | Text fetch | Study |
 | Standards Manual (standardsmanual.com) | Reissued classic manuals (NASA, NYCTA, EPA): system thinking | Books (paid) | Study |
 | Savee, Recent (recent.design) | Mood and art direction | Savee needs login; Recent fetches | Study |
-| Behance, Dribbble | Mood only; many "brand identities" are unrealised concepts with fake mockups | | Study with caution |
 
 When a competitor's identity matters, read their own website and social profiles, collect their colours (`color_tools.py info`) and type classes, and log them in the competitor map. Do not guess what is on a site you could not load; ask the person for screenshots.
 
 ## Fonts
 - **Google Fonts** (mostly SIL OFL): default safe source for logos, web, apps and documents. Per-family licence at `github.com/google/fonts`.
-- **Fontshare** (ITF Free Font License for 64 families, OFL for 36): distinctive display faces; logos allowed; no file handover or subsetting for ITF families (see `typography.md`).
+- **Fontshare** (ITF Free Font License for most families, SIL OFL for some; check per family, checked Oct 2026): distinctive display faces; logos allowed; no file handover or subsetting for ITF families (see `typography.md`).
 - **Commercial foundries** when budget allows a face no competitor uses (licence per weight and use; the client buys).
 - **WhatTheFont** (myfonts.com): identify a font from a client's image; needs a person to upload. If you identify by eye, say it is a guess.
 
@@ -31,3 +30,6 @@ oklch.com (picker, gamut view) · Realtime Colors (preview a palette and fonts o
 
 ## Standards and legal starting points
 WCAG 2.2 quick reference (w3.org/WAI/WCAG22/quickref) for contrast · WIPO Global Brand Database (branddb.wipo.int) and the national register (USPTO, EUIPO TMview, UK IPO, Bangladesh DPDT) for a first trademark screen, always followed by a lawyer's clearance · Paris Convention article 6ter list for protected emblems and flags.
+
+## Mockups
+Composite or drawn mockups from licensed sources (for example LS Graphics, Shots.so, Apple Design Resources; checked Oct 2026, verify each licence) or drawn in HTML/SVG. Label every mockup as a mockup; never present a composite as a photograph of a finished sign or vehicle.

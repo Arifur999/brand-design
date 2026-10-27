@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Brand name] identity routes</title>
+<!-- TEMPLATE: route board for the checkpoint.
+     1. Replace every [bracketed] label, then delete the HTML comments and the .ph placeholder spans.
+     2. Keep 2 or 3 <article class="route"> blocks; the grid adapts. Mark exactly one as Recommended.
+     3. Images: relative paths under routes/a, routes/b, routes/c. Missing images hide themselves and the placeholder shows.
+     4. Fonts: the Google Fonts link is optional; the system stack is the fallback. Print: A3 landscape. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F5F2; --card:#FFFFFF; --ink:#16181D; --muted:#5B606B; --line:#E3E1DB; --faint:#F0EEE9;
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  /* type scale, ratio 1.25 */
+  --t-xs:.75rem; --t-sm:.875rem; --t-base:1rem; --t-md:1.25rem; --t-lg:1.5625rem; --t-xl:1.953rem; --t-2xl:2.441rem; --t-3xl:3.052rem;
+  /* spacing, 8 pt steps */
+  --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2rem; --s5:3rem; --s6:4rem;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:var(--t-base);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1440px;margin:0 auto;padding:var(--s5) var(--s4) var(--s6)}
+h1,h2,h3,p,dl,dd,dt,ul,figure,ol{margin:0;padding:0}
+ul,ol{list-style:none}
+
+.mast{display:grid;grid-template-columns:1fr auto;gap:var(--s3) var(--s5);align-items:end;padding-bottom:var(--s4);border-bottom:1px solid var(--ink)}
+.eyebrow{font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-size:var(--t-3xl);line-height:1.05;letter-spacing:-.025em;font-weight:700;margin-top:var(--s1)}
+.mast-meta{display:grid;grid-template-columns:auto auto;gap:.25rem var(--s3);font-size:var(--t-sm);color:var(--muted)}
+.mast-meta b{color:var(--ink);font-weight:600}
+
+.brief{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4);padding:var(--s4) 0 var(--s5)}
+.brief div{border-top:1px solid var(--line);padding-top:var(--s2)}
+.brief h2{font-size:var(--t-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.35rem}
+.brief p{font-size:var(--t-sm);max-width:44ch}
+
+.routes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:var(--s3);align-items:stretch}
+.route{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--r-accent);border-radius:6px;padding:var(--s4);display:flex;flex-direction:column;gap:var(--s4)}
+.route-head{display:flex;justify-content:space-between;align-items:center;min-height:1.5rem}
+.route-id{font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.badge{font-size:var(--t-xs);font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:#fff;padding:.28rem .7rem;border-radius:99px}
+.route-name{font-size:var(--t-xl);line-height:1.1;letter-spacing:-.02em;font-weight:700;margin-top:calc(var(--s2) * -1)}
+.mechanism{font-size:var(--t-base);padding-left:var(--s2);border-left:2px solid var(--r-accent);margin-top:calc(var(--s2) * -1)}
+.label{font-size:var(--t-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:var(--s1)}
+.block{break-inside:avoid}
+
+.stage{position:relative;display:grid;place-items:center;border-radius:4px;background:var(--faint);overflow:hidden}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:12%;background:var(--faint)}
+.mark-large{aspect-ratio:4/3}
+.lockup{aspect-ratio:16/6}
+.lockup img{padding:6% 10%}
+.touch{aspect-ratio:3/2}
+.touch img{padding:0;object-fit:cover}
+.ph{font-family:var(--mono);font-size:var(--t-xs);color:var(--muted);border:1px dashed #B9B5AB;padding:.4rem .7rem;border-radius:3px;background:rgba(255,255,255,.6)}
+.ph-sm{border:0;background:none;padding:0}
+.note{font-size:var(--t-xs);color:var(--muted);margin-top:.5rem}
+
+.small-row{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s2);margin-top:var(--s2)}
+.small-row figure{display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.chip{position:relative;width:100%;aspect-ratio:1/1;display:grid;place-items:center;border-radius:4px;background:var(--faint);border:1px solid var(--line)}
+.chip.round{border-radius:50%}
+.chip.dark{background:var(--r-ink);border-color:var(--r-ink)}
+.chip .ph-sm{position:absolute}
+.chip.dark .ph-sm{color:#B8BDC7}
+.chip img{position:relative;z-index:1}
+figcaption{font-size:var(--t-xs);color:var(--muted);font-family:var(--mono)}
+
+.specimen{border:1px solid var(--line);border-radius:4px;padding:var(--s3);background:var(--r-bg)}
+.spec-display{font-size:var(--t-2xl);line-height:1.05;letter-spacing:-.02em;color:var(--r-ink)}
+.spec-body{font-size:var(--t-base);line-height:1.55;margin-top:var(--s2);max-width:46ch}
+.spec-meta{font-size:var(--t-xs);color:var(--muted);margin-top:var(--s2);padding-top:var(--s1);border-top:1px solid var(--line);font-family:var(--mono)}
+
+.swatches{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s2)}
+.swatches li{display:flex;gap:.75rem;align-items:center}
+.sw{flex:none;width:3rem;height:3rem;border-radius:4px;border:1px solid rgba(0,0,0,.12)}
+.swatches b{display:block;font-size:var(--t-sm);font-weight:600;line-height:1.2}
+.swatches code{display:block;font-family:var(--mono);font-size:var(--t-xs);color:var(--ink)}
+.swatches small{display:block;font-size:var(--t-xs);color:var(--muted)}
+
+.verdict{display:grid;gap:var(--s2);border-top:1px solid var(--line);padding-top:var(--s3);margin-top:auto}
+.verdict dt{font-size:var(--t-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.verdict dd{font-size:var(--t-sm);margin-top:.15rem}
+
+.close{margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid var(--ink);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--s4) var(--s5)}
+.close h2{font-size:var(--t-xl);line-height:1.1;letter-spacing:-.02em}
+.close ol{counter-reset:n;display:grid;gap:var(--s2)}
+.close li{counter-increment:n;display:grid;grid-template-columns:2rem 1fr;gap:var(--s1);padding-bottom:var(--s2);border-bottom:1px solid var(--line);font-size:var(--t-md);line-height:1.35}
+.close li::before{content:counter(n,decimal-leading-zero);font-family:var(--mono);font-size:var(--t-xs);color:var(--muted);padding-top:.45rem}
+.foot{margin-top:var(--s5);font-size:var(--t-xs);color:var(--muted);display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wrap}
+
+@media (max-width:900px){
+  .wrap{padding:var(--s4) var(--s3) var(--s5)}
+  h1{font-size:var(--t-2xl)}
+  .mast{grid-template-columns:1fr}
+  .brief{grid-template-columns:1fr;gap:var(--s2)}
+  .close{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .wrap{padding:var(--s3) 1rem var(--s5)}
+  h1{font-size:var(--t-xl)}
+  .route{padding:var(--s3) 1rem}
+  .route-name{font-size:var(--t-lg)}
+  .spec-display{font-size:var(--t-xl)}
+  .swatches{grid-template-columns:1fr}
+  .close li{font-size:var(--t-base)}
+}
+
+@page{size:A3 landscape;margin:12mm}
+@media print{
+  body{background:#fff;font-size:10pt}
+  .wrap{max-width:none;padding:0}
+  .routes{grid-template-columns:repeat(3,1fr);gap:8mm}
+  .route{border-radius:0;padding:6mm;gap:5mm;break-inside:avoid}
+  h1{font-size:30pt}
+  .close{break-before:page}
+  .stage,.chip,.sw,.badge,.route{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div>
+      <div class="eyebrow">Identity routes · Checkpoint</div>
+      <!-- TITLE: brand name -->
+      <h1>[Brand name]</h1>
+    </div>
+    <!-- META: round, date, who it is for -->
+    <div class="mast-meta"><span>Round</span><b>[1 of 2]</b><span>Date</span><b>[YYYY-MM-DD]</b><span>Prepared for</span><b>[Decision-maker]</b></div>
+  </header>
+
+  <!-- PLATFORM RECAP: what the routes are judged against. Three short blocks from the one-page platform. -->
+  <section class="brief" aria-label="Platform recap">
+    <div><h2>Audience and need</h2><p>[Who, in which situation, wanting what.]</p></div>
+    <div><h2>The one difference</h2><p>[Onliness statement, one sentence.]</p></div>
+    <div><h2>Ranked traits</h2><p>[1 Trait, not boundary · 2 Trait · 3 Trait]</p></div>
+  </section>
+
+  <main class="routes">
+
+    <!-- ===== ROUTE A: copy this whole <article> for each route (2 to 3). Set the route colours in the style attribute. ===== -->
+    <article class="route" style="--r-ink:#1B2A41; --r-accent:#2F6BFF; --r-bg:#FFFFFF;">
+      <header class="route-head">
+        <div class="route-id">Route A</div>
+        <!-- RECOMMENDED BADGE: keep on exactly one route, delete or comment out on the others -->
+        <span class="badge">[Recommended]</span>
+      </header>
+      <h2 class="route-name">[Route name]</h2>
+      <!-- MECHANISM: one sentence naming the visual idea that produces mark, type and palette together -->
+      <p class="mechanism">[One sentence: the single visual idea behind the mark, the type and the palette. Say where it stands apart from the named competitors.]</p>
+
+      <section class="block" aria-label="Mark">
+        <h3 class="label">Mark</h3>
+        <!-- MARK LARGE: replace src with the route's SVG master. Keep the viewBox square. -->
+        <div class="stage mark-large"><span class="ph">[Mark, large]</span><img src="routes/a/mark.svg" alt="Route A mark, large" onerror="this.hidden=true"></div>
+        <div class="small-row">
+          <!-- MARK AT 32 AND 16 PX: use the real 16 px small-size drawing if the mark has one -->
+          <figure><div class="chip"><span class="ph ph-sm">[32]</span><img src="routes/a/mark.svg" width="32" height="32" alt="Mark at 32 px" onerror="this.hidden=true"></div><figcaption>32 px</figcaption></figure>
+          <figure><div class="chip"><span class="ph ph-sm">[16]</span><img src="routes/a/mark-16.svg" width="16" height="16" alt="Mark at 16 px" onerror="this.hidden=true"></div><figcaption>16 px</figcaption></figure>
+          <figure><div class="chip round"><span class="ph ph-sm">[40]</span><img src="routes/a/mark.svg" width="28" height="28" alt="Mark in avatar circle" onerror="this.hidden=true"></div><figcaption>Avatar</figcaption></figure>
+          <figure><div class="chip dark"><span class="ph ph-sm">[rev]</span><img src="routes/a/mark-reversed.svg" width="32" height="32" alt="Mark reversed" onerror="this.hidden=true"></div><figcaption>Reversed</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="block" aria-label="Lockup">
+        <h3 class="label">Wordmark lockup</h3>
+        <!-- LOCKUP: primary horizontal lockup SVG (outlined text) -->
+        <div class="stage lockup"><span class="ph">[Wordmark lockup]</span><img src="routes/a/lockup.svg" alt="Route A lockup" onerror="this.hidden=true"></div>
+      </section>
+
+      <section class="block" aria-label="Type">
+        <h3 class="label">Type</h3>
+        <!-- TYPE SPECIMEN: real brand name and a real sentence from the client's world. Set the font-family inline per route. -->
+        <div class="specimen">
+          <p class="spec-display" style="font-family:'[Display face]', Georgia, serif">[Brand name]</p>
+          <p class="spec-body" style="font-family:'[Text face]', system-ui, sans-serif">[A real sentence the brand would say, 15 to 25 words, set in the text face at reading size.]</p>
+          <p class="spec-meta">[Display face, weight] · [Text face, weight] · [Licence: OFL / commercial]</p>
+        </div>
+      </section>
+
+      <section class="block" aria-label="Palette">
+        <h3 class="label">Palette</h3>
+        <!-- PALETTE: 3 to 5 swatches. Set each background inline. Contrast ratio: measure with scripts/color_tools.py contrast, against the text colour named. -->
+        <ul class="swatches">
+          <li><span class="sw" style="background:#1B2A41"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+          <li><span class="sw" style="background:#2F6BFF"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+          <li><span class="sw" style="background:#E8EEFF"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+          <li><span class="sw" style="background:#F6F5F2"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+        </ul>
+      </section>
+
+      <section class="block" aria-label="Touchpoint">
+        <h3 class="label">Primary touchpoint</h3>
+        <!-- TOUCHPOINT MOCKUP: the client's real primary surface (van, shopfront, phone, app icon). Label drawn or composited mockups as such. -->
+        <div class="stage touch"><span class="ph">[Primary touchpoint mockup]</span><img src="routes/a/touchpoint.png" alt="Route A on the primary touchpoint" onerror="this.hidden=true"></div>
+        <p class="note">[Label: drawn mockup, indicative, not a photograph]</p>
+      </section>
+
+      <dl class="verdict">
+        <!-- CHECKS: measured results only, pass or what failed -->
+        <div><dt>Checks</dt><dd>[Contrast pass or fail · legible at 16 px · competitor colour distance · licences]</dd></div>
+        <!-- RISK: one line -->
+        <div><dt>Risk</dt><dd>[One line: the honest weakness of this route]</dd></div>
+      </dl>
+    </article>
+
+    <!-- ===== ROUTE B: copy this whole <article> for each route (2 to 3). Set the route colours in the style attribute. ===== -->
+    <article class="route" style="--r-ink:#2B2B2B; --r-accent:#C8501E; --r-bg:#FFFFFF;">
+      <header class="route-head">
+        <div class="route-id">Route B</div>
+        <!-- RECOMMENDED BADGE: keep on exactly one route, delete or comment out on the others -->
+        <!-- <span class="badge">Recommended</span> -->
+      </header>
+      <h2 class="route-name">[Route name]</h2>
+      <!-- MECHANISM: one sentence naming the visual idea that produces mark, type and palette together -->
+      <p class="mechanism">[One sentence: the single visual idea behind the mark, the type and the palette. Say where it stands apart from the named competitors.]</p>
+
+      <section class="block" aria-label="Mark">
+        <h3 class="label">Mark</h3>
+        <!-- MARK LARGE: replace src with the route's SVG master. Keep the viewBox square. -->
+        <div class="stage mark-large"><span class="ph">[Mark, large]</span><img src="routes/b/mark.svg" alt="Route B mark, large" onerror="this.hidden=true"></div>
+        <div class="small-row">
+          <!-- MARK AT 32 AND 16 PX: use the real 16 px small-size drawing if the mark has one -->
+          <figure><div class="chip"><span class="ph ph-sm">[32]</span><img src="routes/b/mark.svg" width="32" height="32" alt="Mark at 32 px" onerror="this.hidden=true"></div><figcaption>32 px</figcaption></figure>
+          <figure><div class="chip"><span class="ph ph-sm">[16]</span><img src="routes/b/mark-16.svg" width="16" height="16" alt="Mark at 16 px" onerror="this.hidden=true"></div><figcaption>16 px</figcaption></figure>
+          <figure><div class="chip round"><span class="ph ph-sm">[40]</span><img src="routes/b/mark.svg" width="28" height="28" alt="Mark in avatar circle" onerror="this.hidden=true"></div><figcaption>Avatar</figcaption></figure>
+          <figure><div class="chip dark"><span class="ph ph-sm">[rev]</span><img src="routes/b/mark-reversed.svg" width="32" height="32" alt="Mark reversed" onerror="this.hidden=true"></div><figcaption>Reversed</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="block" aria-label="Lockup">
+        <h3 class="label">Wordmark lockup</h3>
+        <!-- LOCKUP: primary horizontal lockup SVG (outlined text) -->
+        <div class="stage lockup"><span class="ph">[Wordmark lockup]</span><img src="routes/b/lockup.svg" alt="Route B lockup" onerror="this.hidden=true"></div>
+      </section>
+
+      <section class="block" aria-label="Type">
+        <h3 class="label">Type</h3>
+        <!-- TYPE SPECIMEN: real brand name and a real sentence from the client's world. Set the font-family inline per route. -->
+        <div class="specimen">
+          <p class="spec-display" style="font-family:'[Display face]', Georgia, serif">[Brand name]</p>
+          <p class="spec-body" style="font-family:'[Text face]', system-ui, sans-serif">[A real sentence the brand would say, 15 to 25 words, set in the text face at reading size.]</p>
+          <p class="spec-meta">[Display face, weight] · [Text face, weight] · [Licence: OFL / commercial]</p>
+        </div>
+      </section>
+
+      <section class="block" aria-label="Palette">
+        <h3 class="label">Palette</h3>
+        <!-- PALETTE: 3 to 5 swatches. Set each background inline. Contrast ratio: measure with scripts/color_tools.py contrast, against the text colour named. -->
+        <ul class="swatches">
+          <li><span class="sw" style="background:#2B2B2B"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+          <li><span class="sw" style="background:#C8501E"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+          <li><span class="sw" style="background:#FBEBE3"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+          <li><span class="sw" style="background:#F6F5F2"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+        </ul>
+      </section>
+
+      <section class="block" aria-label="Touchpoint">
+        <h3 class="label">Primary touchpoint</h3>
+        <!-- TOUCHPOINT MOCKUP: the client's real primary surface (van, shopfront, phone, app icon). Label drawn or composited mockups as such. -->
+        <div class="stage touch"><span class="ph">[Primary touchpoint mockup]</span><img src="routes/b/touchpoint.png" alt="Route B on the primary touchpoint" onerror="this.hidden=true"></div>
+        <p class="note">[Label: drawn mockup, indicative, not a photograph]</p>
+      </section>
+
+      <dl class="verdict">
+        <!-- CHECKS: measured results only, pass or what failed -->
+        <div><dt>Checks</dt><dd>[Contrast pass or fail · legible at 16 px · competitor colour distance · licences]</dd></div>
+        <!-- RISK: one line -->
+        <div><dt>Risk</dt><dd>[One line: the honest weakness of this route]</dd></div>
+      </dl>
+    </article>
+
+    <!-- ===== ROUTE C: copy this whole <article> for each route (2 to 3). Set the route colours in the style attribute. ===== -->
+    <article class="route" style="--r-ink:#14352B; --r-accent:#1E8E6A; --r-bg:#FFFFFF;">
+      <header class="route-head">
+        <div class="route-id">Route C</div>
+        <!-- RECOMMENDED BADGE: keep on exactly one route, delete or comment out on the others -->
+        <!-- <span class="badge">Recommended</span> -->
+      </header>
+      <h2 class="route-name">[Route name]</h2>
+      <!-- MECHANISM: one sentence naming the visual idea that produces mark, type and palette together -->
+      <p class="mechanism">[One sentence: the single visual idea behind the mark, the type and the palette. Say where it stands apart from the named competitors.]</p>
+
+      <section class="block" aria-label="Mark">
+        <h3 class="label">Mark</h3>
+        <!-- MARK LARGE: replace src with the route's SVG master. Keep the viewBox square. -->
+        <div class="stage mark-large"><span class="ph">[Mark, large]</span><img src="routes/c/mark.svg" alt="Route C mark, large" onerror="this.hidden=true"></div>
+        <div class="small-row">
+          <!-- MARK AT 32 AND 16 PX: use the real 16 px small-size drawing if the mark has one -->
+          <figure><div class="chip"><span class="ph ph-sm">[32]</span><img src="routes/c/mark.svg" width="32" height="32" alt="Mark at 32 px" onerror="this.hidden=true"></div><figcaption>32 px</figcaption></figure>
+          <figure><div class="chip"><span class="ph ph-sm">[16]</span><img src="routes/c/mark-16.svg" width="16" height="16" alt="Mark at 16 px" onerror="this.hidden=true"></div><figcaption>16 px</figcaption></figure>
+          <figure><div class="chip round"><span class="ph ph-sm">[40]</span><img src="routes/c/mark.svg" width="28" height="28" alt="Mark in avatar circle" onerror="this.hidden=true"></div><figcaption>Avatar</figcaption></figure>
+          <figure><div class="chip dark"><span class="ph ph-sm">[rev]</span><img src="routes/c/mark-reversed.svg" width="32" height="32" alt="Mark reversed" onerror="this.hidden=true"></div><figcaption>Reversed</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="block" aria-label="Lockup">
+        <h3 class="label">Wordmark lockup</h3>
+        <!-- LOCKUP: primary horizontal lockup SVG (outlined text) -->
+        <div class="stage lockup"><span class="ph">[Wordmark lockup]</span><img src="routes/c/lockup.svg" alt="Route C lockup" onerror="this.hidden=true"></div>
+      </section>
+
+      <section class="block" aria-label="Type">
+        <h3 class="label">Type</h3>
+        <!-- TYPE SPECIMEN: real brand name and a real sentence from the client's world. Set the font-family inline per route. -->
+        <div class="specimen">
+          <p class="spec-display" style="font-family:'[Display face]', Georgia, serif">[Brand name]</p>
+          <p class="spec-body" style="font-family:'[Text face]', system-ui, sans-serif">[A real sentence the brand would say, 15 to 25 words, set in the text face at reading size.]</p>
+          <p class="spec-meta">[Display face, weight] · [Text face, weight] · [Licence: OFL / commercial]</p>
+        </div>
+      </section>
+
+      <section class="block" aria-label="Palette">
+        <h3 class="label">Palette</h3>
+        <!-- PALETTE: 3 to 5 swatches. Set each background inline. Contrast ratio: measure with scripts/color_tools.py contrast, against the text colour named. -->
+        <ul class="swatches">
+          <li><span class="sw" style="background:#14352B"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+          <li><span class="sw" style="background:#1E8E6A"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+          <li><span class="sw" style="background:#E2F3EC"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+          <li><span class="sw" style="background:#F6F5F2"></span><div><b>[Role name]</b><code>[#HEX]</code><small>[0.0:1] on [white]</small></div></li>
+        </ul>
+      </section>
+
+      <section class="block" aria-label="Touchpoint">
+        <h3 class="label">Primary touchpoint</h3>
+        <!-- TOUCHPOINT MOCKUP: the client's real primary surface (van, shopfront, phone, app icon). Label drawn or composited mockups as such. -->
+        <div class="stage touch"><span class="ph">[Primary touchpoint mockup]</span><img src="routes/c/touchpoint.png" alt="Route C on the primary touchpoint" onerror="this.hidden=true"></div>
+        <p class="note">[Label: drawn mockup, indicative, not a photograph]</p>
+      </section>
+
+      <dl class="verdict">
+        <!-- CHECKS: measured results only, pass or what failed -->
+        <div><dt>Checks</dt><dd>[Contrast pass or fail · legible at 16 px · competitor colour distance · licences]</dd></div>
+        <!-- RISK: one line -->
+        <div><dt>Risk</dt><dd>[One line: the honest weakness of this route]</dd></div>
+      </dl>
+    </article>
+
+  </main>
+
+  <!-- CLOSING: ask specific questions, never "let us know what you think". -->
+  <section class="close" aria-label="What we need from you">
+    <h2>What we need from you</h2>
+    <ol>
+      <li>[Which route best expresses the lead trait, [trait], for your audience?]</li>
+      <li>[What feels wrong on any route? Problems, not solutions.]</li>
+      <li>[Missing fact or file, e.g. photo of the van, current logo master, font licence.]</li>
+      <li>[Feedback due by [date]. This is round [1 of 2] for this phase.]</li>
+    </ol>
+  </section>
+
+  <footer class="foot"><span>[Studio or partner name, or none for white-label]</span><span>Mockups are drawn or composited and labelled as such. Trademark clearance and print proofs are pending.</span></footer>
+</div>
+</body>
+</html>

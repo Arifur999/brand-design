@@ -16,7 +16,7 @@
 3. **Personality:** ranked "this, not that".
 4. **Voice and tone:** one line, voice chart, tone by situation, 3+ before/after pairs from the client's real copy, writing rules, English variant.
 5. **Logo:** the idea; versions table; colourways (full colour on light, on dark, black, white, one brand colour) and which ground each sits on; clear space diagram from the mark's own unit; minimum sizes in px and mm; approved backgrounds; 6 to 10 misuses including 1 to 2 only this mark can suffer; co-branding.
-6. **Colour:** table (name, role, token, HEX, RGB, OKLCH, CMYK, spot, contrast); proportions per medium (brand moments around 60 neutral / 30 brand / 10 accent; product UI closer to 90 / 8 / 2); ramps 50 to 950; **accessible pairs with ratios** and colours that may never carry text; dark theme; status colours.
+6. **Colour:** table (name, role, token, HEX, RGB, OKLCH, CMYK, spot, contrast); proportions per medium as a starting point, not a rule (the familiar 60-30-10 has no research basis: write the proportion the system actually uses, typically neutral-led with the loudest colour on the least area); ramps 50 to 950; **accessible pairs with ratios** and colours that may never carry text; dark theme; status colours.
 7. **Typography:** roles with source and licence coverage, fallbacks for email and Office, hierarchy table, specimen on a real page, rules.
 8. **Graphic elements:** each device with origin, scale, crop, colour, placement, don'ts; at least 3 real layouts.
 9. **Photography:** approach, direction table, 6 to 12 approved examples, shot list, what to avoid, treatments.
@@ -46,17 +46,31 @@ Delivery checklist: no brackets or guidance notes left; every rule has a visual;
   02-stacked/  03-symbol/  04-wordmark/
   05-favicon-app/  06-social-avatars/
   07-print/    cmyk and spot PDFs (only once proofed; otherwise a note saying who produces them)
-  08-embroidery-vinyl/
+  08-sign-embroidery-vinyl/   cut-ready files: one-colour versions welded into a single outline (no overlapping
+                              shapes, or cutters double-cut), multi-colour versions with one layer per colour,
+                              artwork at real size with the measurements; DXF on the sign maker's request
+                              (weld with `brand_kit.py boolean union`, which needs skia-pathops)
   09-source/   master vector, outlined
   10-legal/    font licence list, trademark screening log, authorship note
 ```
-Names: `brand-lockup-colourway-mode.ext`, lowercase, hyphens (e.g. `fieldline-horizontal-fullcolor-rgb.svg`); never `final2`. SVG with outlined text, viewBox, `<title>`, no fixed size, no raster; PNG transparent at 500 / 1000 / 2000 px wide for lockups and 256 / 512 / 1024 square for symbols; vector PDF for print; EPS only on request. You can produce SVG and HTML here, and PNG through `scripts/render.py`; PDF, ICO and CMYK files need tools the environment may not have: list them as pending rather than faking them.
+Names: `brand-lockup-colourway-mode.ext`, lowercase, hyphens (e.g. `fieldline-horizontal-fullcolor-rgb.svg`); never `final2`. SVG with outlined text, viewBox, `<title>`, no fixed size, no raster; PNG transparent at 500 / 1000 / 2000 px wide for lockups and 256 / 512 / 1024 square for symbols; vector PDF for print; EPS only on request. Produce them with `scripts/brand_kit.py`: `lint` every master (add `--forbid <studio name>` for white-label), `onecolour` for the currentColor master, `export` for transparent PNGs and a vector PDF, `icons` for the favicon set, app icons and manifest, `tokens` for tokens.css, DTCG tokens.json and the swatches page. Open every output once. CMYK, spot and EPS files come from a vector app with the printer's profile: list them as pending, never fake them.
+- **Editable templates** for the assets the client makes most (social posts, presentation, letterhead, quote or invoice) in the tool their staff use (Canva or Figma when connected), with logo and type layers locked. Templates beat rules: drift comes from missing templates.
 
 ## Print and production honesty
 Screen values are exact; CMYK, Pantone, RAL and vinyl codes come from the printer's ICC profile, physical swatch books and fabricator charts. Flow: approve sRGB hex → ask the printing condition (printer, paper, profile) → ICC-aware CMYK with the profile named beside each value → physical proof → the approved sample replaces derived values. Common profiles to confirm: GRACoL 2013 or SWOP (US coated), PSO Coated v3 / FOGRA51 (EU coated), PSO Uncoated v3 / FOGRA52. Pantone needs a current physical guide (C and U differ). Vivid blues, greens and oranges dull in CMYK: consider a spot colour. Uncoated and kraft stocks shift colours: provide separate values or a one-colour version. Embroidery: a simplified drawing, text at least about 6 mm tall (confirm with the digitiser), about 6 thread colours maximum, no gradients.
 
+| Material or condition | What changes | Do |
+|---|---|---|
+| Uncoated paper | colours print darker and flatter | separate uncoated values; open counters |
+| Kraft board | light colours vanish, blues go grey, reds go brick | white underlay or a one-colour version |
+| Clear or coloured label film | inks go transparent | white underlay under colour |
+| Backlit signs | colour shifts when lit | approve samples by day and at night |
+| Large dark areas | 100% K looks grey | rich black (for example C60 M40 Y40 K100 within the printer's ink limit); small text stays 100% K |
+| Proofing | | an agreed tolerance, typically ΔE00 of 2 to 3 against the approved sample |
+| Pantone | most libraries need a paid Pantone Connect licence in design apps (since 2022) | choose from a physical guide; record number, C or U, and edition |
+
 ## Legal and authorship (not legal advice; checked October 2026)
-- Purely AI-generated material is not protected by US copyright (US Copyright Office report, January 2025; human authorship requirement upheld when *Thaler v. Perlmutter* review was denied in March 2026); human selection, arrangement and modification are protectable. Keep a **process file** per project (word maps, construction notes, numbered candidates, selections and edits, dates) as the authorship record, and record the human refinement pass.
+- Purely AI-generated material is not protected by US copyright (US Copyright Office report, January 2025; the human-authorship requirement has been upheld in court; verify current status with counsel); human selection, arrangement and modification are protectable. Keep a **process file** per project (word maps, construction notes, numbered candidates, selections and edits, dates) as the authorship record, and record the human refinement pass.
 - Trademark screening ladder (designer scope; report "no obvious conflicts found in [registers, classes, date]", never "cleared"): reverse image search (Google Lens, TinEye) in colour and black → USPTO trademark search (tmsearch.uspto.gov) → WIPO Global Brand Database (image search, Madrid, Article 6ter emblems) → EUIPO / TMview for the EU → UK IPO → the client's national register → unregistered use (web, maps, company registries, domains, handles). Nice classes, e.g. HVAC services 37, dental and landscaping 44, SaaS 42 and downloadable software 9, marketing 35: confirm in the official class list.
 - Refer to a lawyer when a similar mark exists in a related class, the client will file or trade in several countries, the brand is high-value, the name is descriptive or geographic, it resembles a famous mark, or the client asks for a clearance opinion.
 - Protected emblems are off limits: red cross, red crescent and red crystal, government seals, coats of arms, national flags as emblem grounds, official certification marks (use official badge files only, with permission).

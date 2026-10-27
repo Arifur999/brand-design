@@ -11,7 +11,7 @@ Platform versions move every year. Values below were checked in October 2026 aga
 | | iOS | Android |
 |---|---|---|
 | Touch target | 44 pt | 48 dp |
-| Navigation | tab bar, up to 5 tabs, labels on every tab | navigation bar 3 to 5 destinations; rail on medium+; expanded rail replaces the drawer (navigation drawer is deprecated in M3 Expressive) |
+| Navigation | tab bar, up to 5 tabs, labels on every tab | navigation bar 3 to 5 destinations; rail on medium+; M3 Expressive steers away from the navigation drawer toward the expanded rail (verify current guidance) |
 | Body text | 17 pt (Body) | 16 sp (Body Large) / 14 sp (Body Medium) |
 | Primary action | trailing nav-bar button or in content | FAB (one per screen, constructive only) or filled button |
 | Back | leading chevron with previous title + edge swipe | system back (predictive back) + app-bar arrow |
@@ -29,7 +29,7 @@ Platform versions move every year. Values below were checked in October 2026 aga
 
 ## Material 3 Expressive essentials
 - 48 dp targets (24 dp icons), at least 8 dp apart. Top app bar 64 dp with up to 3 actions plus overflow; medium and large variants collapse on scroll.
-- FAB: medium 80 dp is the Expressive default (standard 56, large 96; the small FAB is deprecated); 16 dp from edges, above the navigation bar; list bottom padding = FAB height + 16.
+- FAB: Expressive favours the medium 80 dp size (standard 56, large 96; small FAB discouraged; verify current specs); 16 dp from edges, above the navigation bar; list bottom padding = FAB height + 16.
 - Type scale (sp): Display 57/45/36, Headline 32/28/24, Title 22/16/14, Body 16/14/12, Label 14/12/11. Android 14+ scales text non-linearly to 200%: test it.
 - Shape scale: 4, 8, 12, 16, 20, 28, 32, 48, full; chips 8, cards 12, FAB 16, dialogs and bottom sheets 28.
 - Colour roles: map primary/onPrimary, primaryContainer (subtle), tertiary (accent), error, surface and the five surfaceContainer tones (elevation by tone), outline (3:1 control edges) and outlineVariant (decorative). Brand-led apps keep their own scheme rather than dynamic colour.

@@ -3,8 +3,9 @@
 Use before presenting any design, and as the whole procedure in critique or audit mode. Evidence before scores: a render, a measured number or a quoted element. "Make it pop" is not a finding.
 
 ## 1. Captures (first)
-- `python scripts/render.py responsive FILE --outdir shots/` (375, 768, 1280, 1536); long pages with `--height 3000` or several `shot` captures; dark mode and key states (empty, error, loading, open menu, dialog) as separate captures.
-- Squint test at 1280: the first three blobs you see should be the three most important things. Grayscale test: hierarchy survives without colour.
+- `python scripts/render.py responsive FILE --outdir shots/` writes full-page captures at 375, 768, 1280 and 1536 plus `report.json`, and prints a check line per width (overflow, h1 count, console errors, broken images, images without alt, unnamed controls, unlabelled fields). Every non-zero value is a finding until explained.
+- Repeat with `--dark` when dark mode ships and `--reduced-motion` when there is motion. Reach states with `--eval`, for example `shot FILE --out menu.png --width 375 --eval "document.querySelector('[aria-controls=menu]').click()"`; capture the empty, error, loading and dialog states the same way.
+- Squint test at 1280: the first three blobs you see are the three most important things. Grayscale test: hierarchy survives without colour.
 - Read every PNG and note what you see, not what you intended.
 
 ## 2. Gates (any failure blocks presenting)
@@ -36,7 +37,7 @@ Use before presenting any design, and as the whole procedure in critique or audi
 | 9 | Accessibility | contrast failures, tiny targets, unnamed icon buttons, colour-only meaning | WCAG 2.2 AA met in the design; keyboard and zoom paths work |
 | 10 | Conversion and usability | long forms, buried proof, hidden prices, dead ends, mobile CTA screens down | shortest path, proof where decisions happen, objections answered before the CTA, only necessary fields, every page ends with a next step |
 
-**Verdict:** 36 to 40 ship (reference grade) · 32 to 35 ship after the listed polish · 24 to 31 revise and re-score · under 24 rework from the brief, structure or direction. **Blocking regardless of total:** any 0, or a 1 in Accessibility or Clarity of purpose. For apps and dashboards, read criterion 10 as task efficiency (fewest steps for the top tasks, clear recovery from errors).
+**Verdict:** 36 to 40 reference grade · **34 to 35 client-ready** · 30 to 33 polish before presenting · under 30 revise from the brief, structure or direction. **Client work needs 34 or more with no criterion below 3, and Accessibility and Clarity at 4.** Any 0 blocks regardless of total. For apps and dashboards, read criterion 10 as task efficiency (fewest steps for the top tasks, clear recovery from errors).
 
 Also run the generic check (`direction.md`): tells present only with written reasons, logo-swap test, the signature element named. For dashboards add the QA list in `dashboards-and-data.md`; for mobile, the QA list in `mobile.md`.
 
@@ -47,11 +48,22 @@ Also run the generic check (`direction.md`): tells present only with written rea
 ```
 Total, blocking items, verdict. Fix in this order: blockers (broken flows, failed forms, accessibility failures) → clarity → conversion path → hierarchy → colour and contrast → typography → spacing → consistency → states → imagery polish. Re-capture and re-score what changed; stop after three rounds and report what remains open. Write fixes as element + problem + change ("Hero CTA: outline, same weight as nav links. Change to filled primary, 48 px, label 'Book a free inspection'").
 
-## 5. Critique mode (someone else's design or a live site)
+## 5. Independent review and pre-handoff checklist
+For every client deliverable, when subagents exist, give a fresh reviewer the brief, this file and the PNGs (not your reasoning) and ask for gates and scores with evidence. Where you disagree, the lower score stands unless you can point to evidence. Without subagents, label the report "self-review".
+
+Before handoff, tick every line:
+- **Content:** real copy proofread in one English variant; CTA labels identical everywhere; numbers, prices, phones and licence numbers checked against the brief; testimonials approved; legal pages linked; dates and copyright current.
+- **Visual:** tokens only (no stray hex, radius or font); 4 px spacing scale; type scale with ≤ 2 families and ≤ 3 weights; contrast 4.5:1 text and 3:1 edges in both themes; one icon set; consistent photo crops; no near-miss alignments (overlap clearly by 24+ or separate by 16+).
+- **Interaction:** no `#` links; all states including loading; focus ring never hidden; forms tested end to end (delivery, spam, success); `tel:`, `mailto:` and map links work; reduced motion leaves everything visible.
+- **Responsive:** 320, 375, 768, 1024, 1440, 1920 without sideways scroll; nav does not wrap at 1024 to 1280; primary CTA in the first mobile viewport; sticky layers under 15% of the screen.
+- **Media and performance:** hero image ≤ 200 KB, others ≤ 150 KB; dimensions on all media; fonts subset and self-hosted where the licence allows; LCP ≤ 2.5 s, CLS ≤ 0.1, INP ≤ 200 ms when measurable.
+- **Launch:** favicon set and Apple touch icon; titles, descriptions and a 1200 × 630 share image; custom 404; analytics events named.
+
+## 6. Critique mode (someone else's design or a live site)
 1. Context: audience, goal, platform. Read the site or files; ask at most 3 questions and write the rest as assumptions.
 2. First impression in two seconds: what a stranger would say it is.
 3. Gates, then the 10 criteria with evidence, then the **top three changes**: exactly what to change ("CTA fill #4FA3E0 to #1F6FB2"), the measured effect ("white label 2.6:1 to 5.1:1"), why (tied to the goal), and the cost (CSS only, copy, new photography, rebuild).
 4. Name what works before what does not. Critique the work, never the person. A clean audit means nothing measurable is broken, not that the design is good.
 
-## 6. What a self-review cannot prove
+## 7. What a self-review cannot prove
 Real devices, screen-reader behaviour, real users completing the task, live performance on real networks, and whether the copy is true. Say which were not checked. For high-stakes work recommend a five-user test on the most important task and a screen-reader pass.
